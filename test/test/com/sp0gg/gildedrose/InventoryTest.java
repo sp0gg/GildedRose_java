@@ -1,8 +1,9 @@
-package test.com.alexaitken.gildedrose;
+package test.com.sp0gg.gildedrose;
 
 import java.util.Arrays;
 
 import com.alexaitken.gildedrose.*;
+import com.sp0gg.gildedrose.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

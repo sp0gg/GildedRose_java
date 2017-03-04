@@ -1,3 +1,8 @@
+##Comments
+The instructions say not to modify the Item class, but I did anyway.
+
+Original readme is below:
+
 # The Gilded Rose Code Kata
 
 This is a Java version of the Gilded Rose Kata, original found

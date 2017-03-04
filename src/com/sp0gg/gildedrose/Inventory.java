@@ -1,4 +1,4 @@
-package com.alexaitken.gildedrose;
+package com.sp0gg.gildedrose;
 
 public class Inventory {
 

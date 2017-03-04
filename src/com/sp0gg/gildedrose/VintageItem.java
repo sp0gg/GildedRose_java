@@ -1,4 +1,4 @@
-package com.alexaitken.gildedrose;
+package com.sp0gg.gildedrose;
 
 /**
  * Created by sp0gg on 3/4/17.

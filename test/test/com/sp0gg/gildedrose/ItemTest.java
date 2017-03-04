@@ -1,6 +1,6 @@
-package test.com.alexaitken.gildedrose;
+package test.com.sp0gg.gildedrose;
 
-import com.alexaitken.gildedrose.Item;
+import com.sp0gg.gildedrose.Item;
 import org.junit.Assert;
 import org.junit.Test;
 

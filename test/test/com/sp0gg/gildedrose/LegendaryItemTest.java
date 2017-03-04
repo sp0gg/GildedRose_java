@@ -1,7 +1,7 @@
-package test.com.alexaitken.gildedrose;
+package test.com.sp0gg.gildedrose;
 
-import com.alexaitken.gildedrose.LegendaryItem;
-import com.alexaitken.gildedrose.Item;
+import com.sp0gg.gildedrose.LegendaryItem;
+import com.sp0gg.gildedrose.Item;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
