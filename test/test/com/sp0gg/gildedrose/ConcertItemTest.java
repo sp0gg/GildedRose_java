@@ -23,7 +23,7 @@ public class ConcertItemTest {
     }
 
     @Test
-    public void updateItemShouldIncreaseQualityWhenConcertClose(){
+    public void updateItemShouldIncreaseQualityBy2WhenConcertWithin10Days(){
         Item item = new ConcertItem("Concert Item", 10, 20);
 
         item.updateQuality();
@@ -34,7 +34,7 @@ public class ConcertItemTest {
     }
 
     @Test
-    public void updateItemShouldIncreaseQualityWhenConcertImminent(){
+    public void updateItemShouldIncreaseQualityBy3WhenConcertWithin5Days(){
         Item item = new ConcertItem("Concert Item", 5, 20);
 
         item.updateQuality();

@@ -2,7 +2,6 @@ package test.com.sp0gg.gildedrose;
 
 import java.util.Arrays;
 
-import com.alexaitken.gildedrose.*;
 import com.sp0gg.gildedrose.*;
 import org.junit.Test;
 
@@ -46,7 +45,7 @@ public class InventoryTest {
 	
 	@Test
 	public void should_lower_the_sellIn_by_one_for_normal_items() throws Exception {
-		Item normalItem = new StandardItem("+5 Dexterity Vest", 10, 20);
+		Item normalItem = new Item("+5 Dexterity Vest", 10, 20);
 		
 		Inventory sut = new Inventory((Item[]) Arrays.asList(normalItem).toArray());
 		
@@ -58,7 +57,7 @@ public class InventoryTest {
 	
 	@Test
 	public void should_lower_the_quality_by_one_for_normal_items() throws Exception {
-		Item normalItem = new StandardItem("+5 Dexterity Vest", 10, 20);
+		Item normalItem = new Item("+5 Dexterity Vest", 10, 20);
 		
 		Inventory sut = new Inventory((Item[]) Arrays.asList(normalItem).toArray());
 		
@@ -70,7 +69,7 @@ public class InventoryTest {
 	
 	@Test
 	public void should_not_lower_the_quality_below_zero() throws Exception {
-		Item normalItem = new StandardItem("+5 Dexterity Vest", 10, 0);
+		Item normalItem = new Item("+5 Dexterity Vest", 10, 0);
 		
 		Inventory sut = new Inventory((Item[]) Arrays.asList(normalItem).toArray());
 		
@@ -82,7 +81,7 @@ public class InventoryTest {
 	
 	@Test
 	public void should_lower_the_quality_twice_as_fast_once_the_sell_in_date_has_passed() throws Exception {
-		Item normalItem = new StandardItem("+5 Dexterity Vest", -1, 25);
+		Item normalItem = new Item("+5 Dexterity Vest", -1, 25);
 		
 		Inventory sut = new Inventory((Item[]) Arrays.asList(normalItem).toArray());
 		

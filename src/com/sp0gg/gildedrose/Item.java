@@ -3,12 +3,14 @@ package com.sp0gg.gildedrose;
 /**
  * Created by sp0gg on 3/4/17.
  */
-public abstract class Item {
+public class Item {
     private String name;
-    int sellIn;
     private int quality;
+    protected int sellIn;
+    protected int degradationRate = 1;
+    protected int ageRate = 1;
 
-    Item(String name, int sellIn, int quality) {
+    public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
@@ -26,7 +28,16 @@ public abstract class Item {
         return quality;
     }
 
-    public abstract void updateQuality();
+    public void updateQuality() {
+        this.sellIn -= ageRate;
+        int rate = this.degradationRate;
+
+        if (this.sellIn < 0) {
+            rate *= 2;
+        }
+
+        setQuality(this.quality - rate);
+    }
 
     public void setQuality(int quality) {
         if(quality > 50) {
@@ -37,4 +48,9 @@ public abstract class Item {
             this.quality = quality;
         }
     }
+
+    public void setDegradationRate(int degradationRate) {
+        this.degradationRate = degradationRate;
+    }
+
 }

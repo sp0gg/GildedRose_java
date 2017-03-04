@@ -11,19 +11,19 @@ public class ConcertItem extends Item {
 
     @Override
     public void updateQuality() {
-        this.sellIn -= 1;
-        calculateQuality();
+        this.degradationRate = calculateDegradationRate();
+        super.updateQuality();
     }
 
-    private void calculateQuality() {
-        if(this.sellIn < 0) {
-            this.setQuality(0);
+    private int calculateDegradationRate() {
+        if(this.sellIn < 1) {
+            return this.getQuality();
         }else if (this.sellIn <= 5) {
-            this.setQuality(this.getQuality() + 3);
-        }else if (this.sellIn < 10) {
-            this.setQuality(this.getQuality() + 2);
+            return -3;
+        }else if (this.sellIn <= 10) {
+            return -2;
         }else{
-            this.setQuality(this.getQuality() + 1);
+            return -1;
         }
     }
 }
