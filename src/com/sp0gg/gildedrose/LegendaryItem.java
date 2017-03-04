@@ -6,8 +6,6 @@ package com.sp0gg.gildedrose;
 public class LegendaryItem extends Item {
     public LegendaryItem(String name) {
         super(name, 0, 80);
-        this.degradationRate = 0;
-        this.ageRate = 0;
     }
 
     @Override

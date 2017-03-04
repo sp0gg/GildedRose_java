@@ -16,6 +16,17 @@ public class Item {
         this.quality = quality;
     }
 
+    public void updateQuality() {
+        this.sellIn -= ageRate;
+        int degradationRate = this.degradationRate;
+
+        if (this.sellIn < 0) {
+            degradationRate *= 2;
+        }
+
+        setQuality(this.quality - degradationRate);
+    }
+
     public String getName() {
         return name;
     }
@@ -24,22 +35,23 @@ public class Item {
         return sellIn;
     }
 
+    public void setDegradationRate(int degradationRate) {
+        this.degradationRate = degradationRate;
+    }
+
+    public int getAgeRate() {
+        return ageRate;
+    }
+
+    public void setAgeRate(int ageRate) {
+        this.ageRate = ageRate;
+    }
+
     public int getQuality() {
         return quality;
     }
 
-    public void updateQuality() {
-        this.sellIn -= ageRate;
-        int rate = this.degradationRate;
-
-        if (this.sellIn < 0) {
-            rate *= 2;
-        }
-
-        setQuality(this.quality - rate);
-    }
-
-    public void setQuality(int quality) {
+    private void setQuality(int quality) {
         if(quality > 50) {
             this.quality = 50;
         }else if (quality < 0) {
@@ -48,9 +60,4 @@ public class Item {
             this.quality = quality;
         }
     }
-
-    public void setDegradationRate(int degradationRate) {
-        this.degradationRate = degradationRate;
-    }
-
 }

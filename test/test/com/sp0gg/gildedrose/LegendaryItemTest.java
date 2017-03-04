@@ -11,7 +11,6 @@ import static org.junit.Assert.assertEquals;
  */
 public class LegendaryItemTest {
 
-
     @Test
     public void updateItemShouldNeverChangeProperties(){
         Item item = new LegendaryItem("Legendary Item");
