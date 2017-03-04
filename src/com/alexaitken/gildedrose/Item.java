@@ -1,43 +1,40 @@
-/**
- * 
- */
 package com.alexaitken.gildedrose;
 
-public class Item {
+/**
+ * Created by sp0gg on 3/4/17.
+ */
+public abstract class Item {
+    private String name;
+    int sellIn;
+    private int quality;
 
-	private String name;
-	private int sellIn;
+    Item(String name, int sellIn, int quality) {
+        this.name = name;
+        this.sellIn = sellIn;
+        this.quality = quality;
+    }
 
-	private int quality;
+    public String getName() {
+        return name;
+    }
 
-	public Item(String name, int sellIn, int quality) {
-		super();
-		this.name = name;
-		this.sellIn = sellIn;
-		this.quality = quality;
-	}
+    public int getSellIn() {
+        return sellIn;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public int getQuality() {
+        return quality;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public abstract void updateQuality();
 
-	public int getSellIn() {
-		return sellIn;
-	}
-
-	public void setSellIn(int sellIn) {
-		this.sellIn = sellIn;
-	}
-
-	public int getQuality() {
-		return quality;
-	}
-
-	public void setQuality(int quality) {
-		this.quality = quality;
-	}
+    public void setQuality(int quality) {
+        if(quality > 50) {
+            this.quality = 50;
+        }else if (quality < 0) {
+            this.quality = 0;
+        }else{
+            this.quality = quality;
+        }
+    }
 }

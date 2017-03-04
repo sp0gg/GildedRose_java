@@ -1,6 +1,6 @@
 package test.com.alexaitken.gildedrose;
 
-import com.alexaitken.gildedrose.NewItem;
+import com.alexaitken.gildedrose.Item;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ public class ItemTest {
 
     @Test
     public void assignQualityMax50(){
-        NewItem item = mock(NewItem.class, CALLS_REAL_METHODS);
+        Item item = mock(Item.class, CALLS_REAL_METHODS);
 
         item.setQuality(60);
 
@@ -23,7 +23,7 @@ public class ItemTest {
 
     @Test
     public void assignQualityMin0(){
-        NewItem item = mock(NewItem.class, CALLS_REAL_METHODS);
+        Item item = mock(Item.class, CALLS_REAL_METHODS);
 
         item.setQuality(-44);
 

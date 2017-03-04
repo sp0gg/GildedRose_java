@@ -1,6 +1,6 @@
 package test.com.alexaitken.gildedrose;
 
-import com.alexaitken.gildedrose.NewItem;
+import com.alexaitken.gildedrose.Item;
 import com.alexaitken.gildedrose.StandardItem;
 import org.junit.Test;
 
@@ -13,7 +13,7 @@ public class StandardItemTest {
 
     @Test
     public void updateItemShouldUpdatePropertiesForNonExpiredItem(){
-        NewItem item = new StandardItem("Standard Item", 10, 20);
+        Item item = new StandardItem("Standard Item", 10, 20);
 
         item.updateQuality();
 
@@ -24,7 +24,7 @@ public class StandardItemTest {
 
     @Test
     public void updateItemShouldUpdatePropertiesForExpiredItem(){
-        NewItem item = new StandardItem("Standard Item", 0, 20);
+        Item item = new StandardItem("Standard Item", 0, 20);
 
         item.updateQuality();
 

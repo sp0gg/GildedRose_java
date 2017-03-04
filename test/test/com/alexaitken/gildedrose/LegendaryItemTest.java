@@ -1,8 +1,7 @@
 package test.com.alexaitken.gildedrose;
 
 import com.alexaitken.gildedrose.LegendaryItem;
-import com.alexaitken.gildedrose.NewItem;
-import com.alexaitken.gildedrose.StandardItem;
+import com.alexaitken.gildedrose.Item;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -15,7 +14,7 @@ public class LegendaryItemTest {
 
     @Test
     public void updateItemShouldNeverChangeProperties(){
-        NewItem item = new LegendaryItem("Legendary Item");
+        Item item = new LegendaryItem("Legendary Item");
 
         item.updateQuality();
 

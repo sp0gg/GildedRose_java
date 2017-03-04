@@ -1,7 +1,6 @@
 package test.com.alexaitken.gildedrose;
 
-import com.alexaitken.gildedrose.LegendaryItem;
-import com.alexaitken.gildedrose.NewItem;
+import com.alexaitken.gildedrose.Item;
 import com.alexaitken.gildedrose.VintageItem;
 import org.junit.Test;
 
@@ -14,7 +13,7 @@ public class VintageItemTest {
 
     @Test
     public void updateItemIncreasesQuality(){
-        NewItem item = new VintageItem("Vintage Item", 20, 10);
+        Item item = new VintageItem("Vintage Item", 20, 10);
 
         item.updateQuality();
 

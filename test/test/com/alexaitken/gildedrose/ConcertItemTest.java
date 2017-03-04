@@ -1,7 +1,7 @@
 package test.com.alexaitken.gildedrose;
 
 import com.alexaitken.gildedrose.ConcertItem;
-import com.alexaitken.gildedrose.NewItem;
+import com.alexaitken.gildedrose.Item;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -13,7 +13,7 @@ public class ConcertItemTest {
 
     @Test
     public void updateItemShouldIncreaseQuality(){
-        NewItem item = new ConcertItem("Concert Item", 15, 20);
+        Item item = new ConcertItem("Concert Item", 15, 20);
 
         item.updateQuality();
 
@@ -24,7 +24,7 @@ public class ConcertItemTest {
 
     @Test
     public void updateItemShouldIncreaseQualityWhenConcertClose(){
-        NewItem item = new ConcertItem("Concert Item", 10, 20);
+        Item item = new ConcertItem("Concert Item", 10, 20);
 
         item.updateQuality();
 
@@ -35,18 +35,18 @@ public class ConcertItemTest {
 
     @Test
     public void updateItemShouldIncreaseQualityWhenConcertImminent(){
-        NewItem item = new ConcertItem("Concert Item", 5, 20);
+        Item item = new ConcertItem("Concert Item", 5, 20);
 
         item.updateQuality();
 
         assertEquals("Concert Item", item.getName());
         assertEquals(4, item.getSellIn());
-        assertEquals(25, item.getQuality());
+        assertEquals(23, item.getQuality());
     }
 
     @Test
     public void updateItemShouldZeroQualityWhenConcertOver(){
-        NewItem item = new ConcertItem("Concert Item", 0, 0);
+        Item item = new ConcertItem("Concert Item", 0, 0);
 
         item.updateQuality();
 
