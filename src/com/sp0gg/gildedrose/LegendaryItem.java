@@ -9,7 +9,12 @@ public class LegendaryItem extends Item {
     }
 
     @Override
-    public void updateQuality(){
+    public void setQuality(int quality) {
+
+    }
+
+    @Override
+    public void setSellIn(int sellIn) {
 
     }
 }

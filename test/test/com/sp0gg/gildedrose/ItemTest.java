@@ -16,6 +16,8 @@ public class ItemTest {
         Item item = new Item("Item",1, 1);
         item.setDegradationRate(-100);
 
+        item.updateQuality();
+
         Assert.assertEquals(50, item.getQuality());
     }
 
@@ -23,6 +25,8 @@ public class ItemTest {
     public void setQualityMin0(){
         Item item = new Item("Item",1, 1);
         item.setDegradationRate(100);
+
+        item.updateQuality();
 
         Assert.assertEquals(0, item.getQuality());
     }

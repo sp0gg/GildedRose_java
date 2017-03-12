@@ -11,16 +11,17 @@ public class ConcertItem extends Item {
 
     @Override
     public void updateQuality() {
-        this.degradationRate = calculateDegradationRate();
+        this.setDegradationRate(calculateDegradationRate());
         super.updateQuality();
     }
 
     private int calculateDegradationRate() {
-        if(this.sellIn < 1) {
+        int sellIn = this.getSellIn();
+        if(sellIn < 1) {
             return this.getQuality();
-        }else if (this.sellIn <= 5) {
+        }else if (sellIn <= 5) {
             return -3;
-        }else if (this.sellIn <= 10) {
+        }else if (sellIn <= 10) {
             return -2;
         }else{
             return -1;

@@ -6,9 +6,9 @@ package com.sp0gg.gildedrose;
 public class Item {
     private String name;
     private int quality;
-    protected int sellIn;
-    protected int degradationRate = 1;
-    protected int ageRate = 1;
+    private int sellIn;
+    private int degradationRate = 1;
+    private int ageRate = 1;
 
     public Item(String name, int sellIn, int quality) {
         this.name = name;
@@ -17,11 +17,10 @@ public class Item {
     }
 
     public void updateQuality() {
-        this.sellIn -= ageRate;
-        int degradationRate = this.degradationRate;
+        setSellIn(this.getSellIn() - ageRate);
 
-        if (this.sellIn < 0) {
-            degradationRate *= 2;
+        if (this.getSellIn() < 0) {
+            setDegradationRate(this.degradationRate * 2);
         }
 
         setQuality(this.quality - degradationRate);
@@ -35,12 +34,12 @@ public class Item {
         return sellIn;
     }
 
-    public void setDegradationRate(int degradationRate) {
-        this.degradationRate = degradationRate;
+    public void setSellIn(int sellIn) {
+        this.sellIn = sellIn;
     }
 
-    public int getAgeRate() {
-        return ageRate;
+    public void setDegradationRate(int degradationRate) {
+        this.degradationRate = degradationRate;
     }
 
     public void setAgeRate(int ageRate) {
@@ -51,7 +50,7 @@ public class Item {
         return quality;
     }
 
-    private void setQuality(int quality) {
+    public void setQuality(int quality) {
         if(quality > 50) {
             this.quality = 50;
         }else if (quality < 0) {
